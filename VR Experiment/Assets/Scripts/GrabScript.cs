@@ -19,7 +19,11 @@ public class GrabScript : MonoBehaviour
         if(grabbedObject != null && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.75f)
         {
             //release object
-            grabbedObject.transform.SetParent(prevParent);
+            if (prevParent != null)
+                grabbedObject.transform.SetParent(prevParent);
+
+            else
+                grabbedObject.transform.parent = null;
         }
     }
 
@@ -29,7 +33,10 @@ public class GrabScript : MonoBehaviour
         {
             //grab object
             grabbedObject = other.gameObject;
-            prevParent = grabbedObject.transform.parent;
+
+            if (grabbedObject.transform.parent != null)
+                prevParent = grabbedObject.transform.parent;
+
             grabbedObject.transform.SetParent(this.transform);
         }
     }
