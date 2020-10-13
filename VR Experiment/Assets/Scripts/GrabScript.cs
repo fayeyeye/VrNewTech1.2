@@ -23,13 +23,15 @@ public class GrabScript : MonoBehaviour
                 grabbedObject.transform.SetParent(prevParent);
 
             else
-                grabbedObject.transform.parent = null;
+                grabbedObject.transform.SetParent(null);
+
+            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.75f)
+        if (other.GetComponent<Rigidbody>() && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) >= 0.75f)
         {
             //grab object
             grabbedObject = other.gameObject;
@@ -38,6 +40,8 @@ public class GrabScript : MonoBehaviour
                 prevParent = grabbedObject.transform.parent;
 
             grabbedObject.transform.SetParent(this.transform);
+
+            grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }
