@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,6 @@ public class GrabScript : MonoBehaviour
 {
     private Transform prevParent;
     private GameObject grabbedObject;
-    private bool grabbed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +20,17 @@ public class GrabScript : MonoBehaviour
         {
             //release object
             grabbedObject.transform.SetParent(prevParent);
-            grabbed = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.75f && !grabbed)
+        if (other.GetComponent<Rigidbody>() && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.75f)
         {
             //grab object
             grabbedObject = other.gameObject;
             prevParent = grabbedObject.transform.parent;
             grabbedObject.transform.SetParent(this.transform);
-            grabbed = true;
         }
     }
 }
