@@ -7,6 +7,8 @@ public class GrabScript : MonoBehaviour
     private Transform prevParent;
     private GameObject grabbedObject;
 
+    private bool firstGrab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class GrabScript : MonoBehaviour
                 grabbedObject.transform.SetParent(null);
 
             grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            firstGrab = false;
         }
     }
 
@@ -36,9 +39,13 @@ public class GrabScript : MonoBehaviour
             //grab object
             grabbedObject = other.gameObject;
 
-            if (grabbedObject.transform.parent != null)
-                prevParent = grabbedObject.transform.parent;
+            if (firstGrab == false)
+            {
+                if (grabbedObject.transform.parent != null)
+                    prevParent = grabbedObject.transform.parent;
 
+                firstGrab = true;
+            }
             grabbedObject.transform.SetParent(this.transform);
 
             grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
