@@ -7,7 +7,7 @@ public class Resizer : MonoBehaviour
     public GameObject smallPlayer;
     public GameObject largePlayer;
 
-    private bool playerSize; //false is small, big is true
+    public bool playerSize; //false is small, big is true
     // Start is called before the first frame update
     void Start()
     {

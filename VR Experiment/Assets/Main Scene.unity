@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 115990607}
   - component: {fileID: 115990606}
   m_Layer: 0
-  m_Name: PlayerController (1)
+  m_Name: PlayerControllerLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,6 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallPlayer: {fileID: 1153655177}
   largePlayer: {fileID: 115990605}
+  playerSize: 0
 --- !u!4 &333302890
 Transform:
   m_ObjectHideFlags: 0
@@ -831,7 +832,7 @@ GameObject:
   - component: {fileID: 342462148}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: SmallObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -996,7 +997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342462147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.139, y: 0.81, z: 0.572}
+  m_LocalPosition: {x: 3.4, y: 4.094, z: 6.171}
   m_LocalScale: {x: 0.051276997, y: 0.051276997, z: 0.051276997}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1973,7 +1974,7 @@ GameObject:
   - component: {fileID: 1138856533}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: LargeObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
