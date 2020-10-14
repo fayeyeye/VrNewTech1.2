@@ -55,11 +55,8 @@ public class GrabScript : MonoBehaviour
             if ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) < 0.75f))
             {
                 //release object
-                if (prevParent != null)
-                    grabbedObject.transform.SetParent(prevParent);
 
-                else
-                    grabbedObject.transform.SetParent(null);
+                grabbedObject.transform.SetParent(prevParent);
 
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
 
