@@ -494,8 +494,6 @@ GameObject:
   - component: {fileID: 277156170}
   - component: {fileID: 277156172}
   - component: {fileID: 277156171}
-  - component: {fileID: 277156174}
-  - component: {fileID: 277156173}
   m_Layer: 0
   m_Name: LeftHandAnchor
   m_TagString: Untagged
@@ -531,6 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9286c93e443bf448d6bfdca941f839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftHand: 1
+  RightHand: 0
 --- !u!135 &277156172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -544,31 +544,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &277156173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277156169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f64267b1f38760449496391fae74233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportVisualPrefab: {fileID: 61345796234388863, guid: 65d54f50fe546a847a8c84ef34cf6203, type: 3}
---- !u!114 &277156174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277156169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb9e951ca94d2444aa64e21cdb5f652, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &319838405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 463470, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
@@ -1421,6 +1396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9286c93e443bf448d6bfdca941f839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftHand: 0
+  RightHand: 1
 --- !u!135 &2107656243
 SphereCollider:
   m_ObjectHideFlags: 0
