@@ -27,6 +27,30 @@ public class GrabScript : MonoBehaviour
         releaseObject();
     }
 
+    public void releaseObject()
+    {
+        if (grabbedObject != null)
+        {
+
+            if ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) < 0.75f))
+            {
+                //release object
+
+                grabbedObject.transform.SetParent(null);
+
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+
+                if (LeftHand == true)
+                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
+
+                if (RightHand == true)
+                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
+
+                firstGrab = false;
+            }
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<Rigidbody>() && ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f)))
@@ -44,30 +68,6 @@ public class GrabScript : MonoBehaviour
             grabbedObject.transform.SetParent(this.transform);
 
             grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
-        }
-    }
-
-    public void releaseObject()
-    {
-        if (grabbedObject != null)
-        {
-
-            if ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) < 0.75f))
-            {
-                //release object
-
-                grabbedObject.transform.SetParent(prevParent);
-
-                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-
-                if (LeftHand == true)
-                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
-
-                if(RightHand == true)
-                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
-
-                firstGrab = false;
-            }
         }
     }
 }
