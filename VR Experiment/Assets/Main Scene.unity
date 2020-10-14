@@ -1422,7 +1422,7 @@ MonoBehaviour:
   EnableRotationDuringAim: 0
   EnableRotationDuringPreTeleport: 0
   EnableRotationDuringPostTeleport: 1
-  TeleportDestinationPrefab: {fileID: 3150472587908457298, guid: 65d54f50fe546a847a8c84ef34cf6203, type: 3}
+  TeleportDestinationPrefab: {fileID: 114000013141257940, guid: 1b474618c4fc5f54e8a8b803c8352c7d, type: 3}
   TeleportDestinationLayer: 0
   AimCollisionType: 0
   UseCharacterCollisionData: 0
@@ -1503,8 +1503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OrientationMode: 0
   UpdateOrientationDuringAim: 0
-  AimDistanceThreshold: 0
-  AimDistanceMaxRange: 0
+  AimDistanceThreshold: 10
+  AimDistanceMaxRange: 110
 --- !u!114 &1749837950
 MonoBehaviour:
   m_ObjectHideFlags: 0
