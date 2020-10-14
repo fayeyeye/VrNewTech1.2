@@ -347,6 +347,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c8b8609f9bb434eaf5248f17ff1293, type: 3}
+--- !u!1 &185855824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185855826}
+  - component: {fileID: 185855825}
+  m_Layer: 0
+  m_Name: MenuController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &185855825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185855824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b081c8c343e3e4894412c3de5451f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuElement: {fileID: 369170630}
+  tutorialElement: {fileID: 369170629}
+  StartButton: {fileID: 369170628}
+  QuitButton: {fileID: 369170627}
+--- !u!4 &185855826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185855824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.316925, y: -54.906223, z: 74.84166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199062684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,8 +1171,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356100448075853518, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+      propertyPath: m_Name
+      value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499762619140516344, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+      propertyPath: m_Name
+      value: QuitButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+--- !u!1 &369170627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7499762619140516344, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+  m_PrefabInstance: {fileID: 369170626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &369170628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5356100448075853518, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+  m_PrefabInstance: {fileID: 369170626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &369170629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109419264446495339, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+  m_PrefabInstance: {fileID: 369170626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &369170630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6626467791215848598, guid: 32b76bd1eb8c4644d9b99d0db805e663, type: 3}
+  m_PrefabInstance: {fileID: 369170626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461114507
 GameObject:
   m_ObjectHideFlags: 0
