@@ -7,6 +7,8 @@ public class GrabScript : MonoBehaviour
     private Transform prevParent;
     private GameObject grabbedObject;
 
+    Resizer resizer;
+
     private Vector3 currentObjectLoc;
     private Vector3 lastObjectLoc;
 
@@ -18,7 +20,7 @@ public class GrabScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        resizer = FindObjectOfType<Resizer>();
     }
 
     // Update is called once per frame
@@ -59,22 +61,27 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f)))
+        if (other.GetComponent<Rigidbody>() 
+            && ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f))
+            && other.GetComponent<Rigidbody>().isKinematic == false)
         {
-            //grab object
-            grabbedObject = other.gameObject;
-
-            if (firstGrab == false)
+            if ((other.gameObject.tag == "SmallObject" && resizer.playerSize == false) || (other.gameObject.tag == "LargeObject" && resizer.playerSize == true))
             {
-                if (grabbedObject.transform.parent != null)
-                    prevParent = grabbedObject.transform.parent;
+                //grab object
+                grabbedObject = other.gameObject;
 
-                grabbedObject.transform.SetParent(this.transform);
+                if (firstGrab == false)
+                {
+                    if (grabbedObject.transform.parent != null)
+                        prevParent = grabbedObject.transform.parent;
 
-                firstGrab = true;
+                    grabbedObject.transform.SetParent(this.transform);
+
+                    firstGrab = true;
+                }
+
+                grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
             }
-
-            grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }
