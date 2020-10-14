@@ -38,13 +38,19 @@ public class GrabScript : MonoBehaviour
 
                 grabbedObject.transform.SetParent(null);
 
-                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                if (grabbedObject.GetComponent<Rigidbody>() != null)
+                {
+                    grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
 
-                if (LeftHand == true)
-                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
+                    if (LeftHand == true)
+                        grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
 
-                if (RightHand == true)
-                    grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
+                    if (RightHand == true)
+                        grabbedObject.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
+
+                }
+
+                grabbedObject = null;
 
                 firstGrab = false;
             }
@@ -63,9 +69,10 @@ public class GrabScript : MonoBehaviour
                 if (grabbedObject.transform.parent != null)
                     prevParent = grabbedObject.transform.parent;
 
+                grabbedObject.transform.SetParent(this.transform);
+
                 firstGrab = true;
             }
-            grabbedObject.transform.SetParent(this.transform);
 
             grabbedObject.transform.GetComponent<Rigidbody>().isKinematic = true;
         }
