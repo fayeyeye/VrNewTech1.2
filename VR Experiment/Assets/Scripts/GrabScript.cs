@@ -9,6 +9,9 @@ public class GrabScript : MonoBehaviour
 
     private bool firstGrab;
 
+    public bool LeftHand;
+    public bool RightHand;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class GrabScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(grabbedObject != null && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.75f)
+        if(grabbedObject != null && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) < 0.75f))
         {
             //release object
             if (prevParent != null)
@@ -34,7 +37,7 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) >= 0.75f)
+        if (other.GetComponent<Rigidbody>() && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) >= 0.75f))
         {
             //grab object
             grabbedObject = other.gameObject;
