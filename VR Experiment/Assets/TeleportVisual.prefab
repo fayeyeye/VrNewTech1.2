@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 61345796234388858}
   - component: {fileID: 61345796234388857}
   - component: {fileID: 61345796234388856}
+  - component: {fileID: 3150472587908457298}
   m_Layer: 0
   m_Name: TeleportVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61345796234388859
 Transform:
   m_ObjectHideFlags: 0
@@ -96,3 +97,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3150472587908457298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61345796234388863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a7614f10832d041bccff167d2a460f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositionIndicator: {fileID: 61345796234388859}
+  OrientationIndicator: {fileID: 61345796234388859}
+  LandingRotation: {x: 0, y: 0, z: 0, w: 0}
