@@ -21,7 +21,7 @@ public class GrabScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(grabbedObject != null && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) < 0.75f))
+        if(grabbedObject != null && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) < 0.75f))
         {
             //release object
             if (prevParent != null)
@@ -37,7 +37,7 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) >= 0.75f))
+        if (other.GetComponent<Rigidbody>() && (LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f))
         {
             //grab object
             grabbedObject = other.gameObject;
@@ -46,7 +46,7 @@ public class GrabScript : MonoBehaviour
             {
                 if (grabbedObject.transform.parent != null)
                     prevParent = grabbedObject.transform.parent;
-
+                
                 firstGrab = true;
             }
             grabbedObject.transform.SetParent(this.transform);
