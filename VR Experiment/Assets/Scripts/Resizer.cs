@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Resizer : MonoBehaviour
 {
-    public GameObject smallPlayer;
-    public GameObject largePlayer;
+    public Transform smallPlayer;
+    public Transform largePlayer;
+    public Transform PlayerController;
 
     public bool playerSize; //false is small, big is true
     // Start is called before the first frame update
@@ -27,7 +28,17 @@ public class Resizer : MonoBehaviour
     {
         playerSize = !playerSize;
 
-        smallPlayer.SetActive(!smallPlayer.activeSelf);
-        largePlayer.SetActive(!smallPlayer.activeSelf);
+        if (!playerSize)
+        {
+            PlayerController.SetParent(smallPlayer);
+        }
+
+        else
+        {
+            PlayerController.SetParent(largePlayer);
+        }
+
+        PlayerController.localPosition = Vector3.zero;
+        PlayerController.localScale = Vector3.one;
     }
 }
