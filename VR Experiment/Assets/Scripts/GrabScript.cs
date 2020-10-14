@@ -61,7 +61,9 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() && ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f)))
+        if (other.GetComponent<Rigidbody>() 
+            && ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) >= 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) >= 0.75f))
+            && other.GetComponent<Rigidbody>().isKinematic == false)
         {
             if ((other.gameObject.tag == "SmallObject" && resizer.playerSize == false) || (other.gameObject.tag == "LargeObject" && resizer.playerSize == true))
             {
