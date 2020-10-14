@@ -782,6 +782,11 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &508455236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 926263098152007669, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
+  m_PrefabInstance: {fileID: 616596978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &616596978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -789,6 +794,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4168031595582781938, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
+      propertyPath: StartUI
+      value: 
+      objectReference: {fileID: 508455236}
+    - target: {fileID: 4168031595582781938, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
+      propertyPath: InfoUI
+      value: 
+      objectReference: {fileID: 851861032}
+    - target: {fileID: 4168031595582781938, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 945536687}
     - target: {fileID: 5259581951480008130, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
       propertyPath: m_Name
       value: meubels 1
@@ -1128,6 +1145,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &851861032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6245351409084080392, guid: 9acc6bcbcdfceb84c8ace651994b6965, type: 3}
+  m_PrefabInstance: {fileID: 616596978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &863052848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1233,7 @@ MonoBehaviour:
   HMDRotatesPlayer: 1
   RotationEitherThumbstick: 0
   RotationAngle: 45
-  Speed: 1
+  Speed: 2
   CameraRig: {fileID: 338552492}
 --- !u!136 &945536689
 CapsuleCollider:
@@ -1223,7 +1245,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.15
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1241,7 +1263,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &945536691
 MonoBehaviour:
