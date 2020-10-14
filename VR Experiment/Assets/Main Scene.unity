@@ -1379,8 +1379,8 @@ GameObject:
   - component: {fileID: 1749837946}
   - component: {fileID: 1749837951}
   - component: {fileID: 1749837950}
-  - component: {fileID: 1749837949}
   - component: {fileID: 1749837948}
+  - component: {fileID: 1749837949}
   m_Layer: 0
   m_Name: LocomotionController
   m_TagString: Untagged
@@ -1455,14 +1455,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4133858333ed264ebae0d70265b7b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AimButton: 4
-  TeleportButton: 4
+  AimButton: 67108864
+  TeleportButton: 67108864
   FastTeleport: 0
   LeftHand: {fileID: 1559507482}
   RightHand: {fileID: 206343935}
-  InputMode: 2
+  InputMode: 1
   AimingController: 2
-  CapacitiveAimAndTeleportButton: 5
+  CapacitiveAimAndTeleportButton: 4
   ThumbstickTeleportThreshold: 0.75
 --- !u!114 &1749837947
 MonoBehaviour:
@@ -1498,9 +1498,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1749837942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2051e49b4d4201418c42b0244b2bb47, type: 3}
+  m_Script: {fileID: 11500000, guid: 40e31156a98eed94e816056346fac4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrientationMode: 0
+  UpdateOrientationDuringAim: 0
+  AimDistanceThreshold: 0
+  AimDistanceMaxRange: 0
 --- !u!114 &1749837950
 MonoBehaviour:
   m_ObjectHideFlags: 0
