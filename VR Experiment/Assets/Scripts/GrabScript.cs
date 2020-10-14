@@ -55,8 +55,6 @@ public class GrabScript : MonoBehaviour
 
             Vector3 velocity = lastObjectLoc - currentObjectLoc;
 
-            lastObjectLoc = grabbedObject.transform.position;
-
             if ((LeftHand == true && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) < 0.75f) || (RightHand == true && OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) < 0.75f))
             {
                 //release object
@@ -69,7 +67,10 @@ public class GrabScript : MonoBehaviour
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                 grabbedObject.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
                 firstGrab = false;
+                grabbedObject = null;
             }
+
+            lastObjectLoc = grabbedObject.transform.position;
         }
     }
 }
